@@ -303,7 +303,6 @@
 			.members-grid {
 				display: grid;
 				grid-template-columns: repeat(5, 1fr);
-				height: 70vh;
 			}
 
 			.member {
@@ -397,6 +396,12 @@
 				padding: 2rem 1rem 4rem;
 				background: linear-gradient(180deg, var(--black) 0%, var(--dark-gray) 100%);
 			}
+			
+			.contacto {
+                padding: 2rem 1rem 4rem;
+                background: linear-gradient(180deg, var(--dark-gray) 0%, var(--black) 100%);
+                color: white;
+            }
 
 			.title-underline {
 				width: 80px;
@@ -555,16 +560,34 @@
 			}
 
 			.footer {
-				background-color: var(--black);
-				border-top: 2px solid var(--white);
-				padding: 3rem 1rem;
-			}
-
-			.footer-content {
-				max-width: 1200px;
-				margin: 0 auto;
-				text-align: center;
-			}
+                position: relative;
+                background-color: var(--black);
+                border-top: 2px solid var(--white);
+                padding: 3rem 1rem;
+                overflow: hidden;
+                font-family: 'Bebas Neue', sans-serif;
+            }
+            
+            .footer::before {
+                content: "TARGETS";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 12rem;
+                color: rgba(255, 255, 255, 0.03);
+                z-index: 0;
+                pointer-events: none;
+                white-space: nowrap;
+            }
+            
+            .footer-content {
+                position: relative;
+                max-width: 1200px;
+                margin: 0 auto;
+                text-align: center;
+                z-index: 1;
+            }
 
 			.social-links {
 				display: flex;
@@ -1048,7 +1071,20 @@
 							</div>
 						</article>
 					</div>
-				</section>
+					</section>
+				<section class="contacto" id="contacto" aria-labelledby="contacto-title">
+                    <div class="section-title">
+                        <h2 id="contacto-title">CONTÁCTANOS</h2>
+                        <div class="title-underline" aria-hidden="true"></div>
+                    </div>
+                    <div style="margin: auto; text-align: center; width: fit-content;">
+                        <p>¡Estamos listos para tocar en tu escenario o evento!</p>
+                        <p>Envíanos un correo electrónico y responderemos lo más rápido posible.</p>
+                        <p style="margin-top: 2rem;"><a href="mailto:info@labdigital.es" style="font-weight: 500; letter-spacing: 2px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; text-decoration: none; color: inherit;">info@labdigital.es</a></p>
+                    </div>
+                </section>
+
+
 			</main>
 
 			<footer class="footer" role="contentinfo">
@@ -1140,3 +1176,4 @@
 		</script>
 	</body>
 </html>
+
