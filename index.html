@@ -970,7 +970,7 @@
 					</div>
 
 					<div class="events-container">
-						<article class="event-card" data-aos="fade-up" data-aos-delay="0" itemscope itemtype="https://schema.org/MusicEvent">
+						<article class="event-card" data-aos="fade-up" data-aos-delay="0" itemscope itemtype="https://schema.org/MusicEvent" data-link="https://labdigital.es">
 							<div class="event-date">
 								<span class="day">14</span>
 								<span class="month">NOV</span>
@@ -1011,12 +1011,12 @@
 				<div class="footer-content">
 					<nav class="social-links" aria-label="Redes sociales">
 						<a href="https://www.instagram.com/thetargets" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"> <i class="fab fa-instagram" aria-hidden="true"></i> INSTAGRAM </a>
-						<span class="separator" aria-hidden="true">|</span>
+						<!-- <span class="separator" aria-hidden="true">|</span>
 						<a href="https://www.facebook.com/thetargets" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook"> <i class="fab fa-facebook" aria-hidden="true"></i> FACEBOOK </a>
 						<span class="separator" aria-hidden="true">|</span>
 						<a href="https://open.spotify.com/artist/thetargets" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Escúchanos en Spotify"> <i class="fab fa-spotify" aria-hidden="true"></i> SPOTIFY </a>
 						<span class="separator" aria-hidden="true">|</span>
-						<a href="https://www.youtube.com/thetargets" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Míranos en YouTube"> <i class="fab fa-youtube" aria-hidden="true"></i> YOUTUBE </a>
+						<a href="https://www.youtube.com/thetargets" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Míranos en YouTube"> <i class="fab fa-youtube" aria-hidden="true"></i> YOUTUBE </a> -->
 					</nav>
 					<p class="footer-text">
 						© 2025 THE TARGETS |
@@ -1050,13 +1050,16 @@
 				// Event ticket buttons
 				const eventButtons = document.querySelectorAll(".btn-tickets");
 				eventButtons.forEach((button) => {
-					button.addEventListener("click", (e) => {
-						const card = e.target.closest(".event-card");
-						const eventTitle = card.querySelector(".event-title").textContent;
-						alert(`Redirigiendo a la compra de entradas para: ${eventTitle}`);
-						// In production, replace with actual ticket URL
-						// window.location.href = `https://tickets.thetargets.es/event/${eventId}`;
-					});
+				    button.addEventListener("click", (e) => {
+				        const card = e.target.closest(".event-card");
+				        const eventTitle = card.querySelector(".event-title").textContent;
+				        const link = card.dataset.link; // get the data-link attribute
+				        if (link) {
+				            window.location.href = link; // redirect to the URL
+				        } else {
+				            alert(`No hay enlace de compra para: ${eventTitle}`);
+				        }
+				    });
 				});
 
 				// Band member hover effects (desktop only)
@@ -1096,6 +1099,7 @@
 		</script>
 	</body>
 </html>
+
 
 
 
