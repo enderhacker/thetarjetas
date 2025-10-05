@@ -987,7 +987,7 @@
 								</p>
 							</div>
 							<div class="event-cta">
-								<button class="btn-tickets" aria-label="Comprar entradas para Noche de Fuego"><i class="fas fa-ticket-alt" aria-hidden="true"></i> ENTRADAS</button>
+								<a href="https://google.com" class="btn-tickets" aria-label="Comprar entradas para Noche de Fuego"><i class="fas fa-ticket-alt" aria-hidden="true"></i> ENTRADAS</button>
 							</div>
 						</article>
 					</div>
@@ -1046,22 +1046,7 @@
 						});
 					});
 				}
-
-				// Event ticket buttons
-				const eventButtons = document.querySelectorAll(".btn-tickets");
-				eventButtons.forEach((button) => {
-				    button.addEventListener("click", (e) => {
-				        const card = e.target.closest(".event-card");
-				        const eventTitle = card.querySelector(".event-title").textContent;
-				        const link = card.dataset.link; // get the data-link attribute
-				        if (link) {
-				            window.location.href = link; // redirect to the URL
-				        } else {
-				            alert(`No hay enlace de compra para: ${eventTitle}`);
-				        }
-				    });
-				});
-
+				
 				// Band member hover effects (desktop only)
 				if (window.innerWidth > 768) {
 					const members = document.querySelectorAll(".member");
@@ -1099,6 +1084,7 @@
 		</script>
 	</body>
 </html>
+
 
 
 
