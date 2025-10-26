@@ -1056,27 +1056,7 @@
 						});
 					});
 				}
-				
-				// Band member hover effects (desktop only)
-				if (window.innerWidth > 768) {
-					const members = document.querySelectorAll(".member");
-					members.forEach((member) => {
-						member.addEventListener("mouseenter", () => {
-							members.forEach((m) => {
-								if (m !== member) {
-									m.style.filter = "brightness(0.4)";
-								}
-							});
-						});
-
-						member.addEventListener("mouseleave", () => {
-							members.forEach((m) => {
-								m.style.filter = "brightness(1)";
-							});
-						});
-					});
-				}
-
+			
 				// Hide scroll indicator on scroll
 				window.addEventListener("scroll", () => {
 					const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1094,6 +1074,7 @@
 		</script>
 	</body>
 </html>
+
 
 
 
